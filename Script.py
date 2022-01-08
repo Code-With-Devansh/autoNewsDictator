@@ -12,7 +12,10 @@ class News:
         self.engine.say(str)
         self.engine.runAndWait()
     def getNews(self):
-        apiKey = 'f9da9cefd5c54983a49ed363e07d279d'
+        apiKey = 'Enter your api key'
+        if apiKey == "Enter your api key":
+            print("please Enter The Api key before preceeding")
+            return
         str = requests.get(f'https://newsapi.org/v2/top-headlines?country=in&apiKey={apiKey}')
         str = str.text
         dictstr = json.loads(str)
